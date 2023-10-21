@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="index.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <form class="container-fluid justify-content-start">
+        <button
+          class="btn btn-outline-primary me-4"
+          type="button"
+          id="mainRegister"
+        >
+          Register page
+        </button>
+        <button
+          class="btn btn-sm btn-outline-secondary"
+          type="button"
+          id="allRegistered"
+        >
+          All BRUHS registered?
+        </button>
+      </form>
+    </nav>
+    <h1>Let's register you</h1>
+
+    <form>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          placeholder="name@example.com"
+        />
+        <label for="userEmail">Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="userEmail"
+          placeholder="name@example.com"
+        />
+        <label for="userEmail">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="firstPassword"
+          placeholder="Password"
+        />
+        <label for="firstPassword">Password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="secondPassword"
+          placeholder="Confirm Password"
+        />
+        <label for="secondPassword">Confirm Password</label>
+      </div>
+      <audio id="bruhAudio" hidden>
+        <source src="media/sounds/movie_1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <button
+        type="submit"
+        id="submitBtn"
+        class="btn btn-primary btn-lg"
+        title="Reproduce el sonido de BRUH"
+      >
+        Hit This Nice Large button, Register and Become a Real BRUH
+      </button>
+
+      <div id="msg" class="m-3"></div>
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
