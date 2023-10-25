@@ -22,7 +22,7 @@ if (localStorage.getItem("userCollection")) {
 
 //Validation messages
 const emailValidationErrMsg =
-  "<div class='text-danger' >" +
+  "<div class='alert alert-warning' role='alert' >" +
   "<ul> Email address requirements:" +
   "<li>The email address cannot start or end with a dot.</li>" +
   "<li>The email address should not contain spaces.</li>" +
@@ -34,9 +34,9 @@ const emailValidationErrMsg =
   "</div>";
 
 const allCampsErrMsg =
-  "<p class='text-danger' >Yoo, all camps are obligatory, Better fill'em all Bruh!</p>";
+  "<p class='alert alert-warning' role='alert' >Yoo, all camps are obligatory, Better fill'em all Bruh!</p>";
 const passwordValidationErrMsg =
-  "<div class='text-danger'>" +
+  "<div class='alert alert-warning' role='alert'>" +
   "<ul> Password requirements:" +
   "<li> Contains min 6 characters</li>" +
   "<li> At least 1 uppercase letter</li>" +
@@ -44,9 +44,9 @@ const passwordValidationErrMsg =
   "<li> At least 1 number with no spaces</li>" +
   "</div>";
 const passwordErrMsgNotSame =
-  "<p class='text-danger'>Passwords are not the same, check it.</p>";
+  "<p class='alert alert-warning' role='alert'>Passwords are not the same, check it.</p>";
 const successMsg =
-  "<p class='text-success fw-bolder'>Successfully registered bruh!</p>";
+  "<p class='alert alert-success' role='alert'>User successfully created bruh!</p>";
 
 // declaring functions
 
@@ -97,7 +97,13 @@ function onClickSubmit(e) {
   } else {
     msg.innerHTML = successMsg;
     dataStorage();
+
     bruhAudio.play();
+    msgTimeout();
+
+    setTimeout(function () {
+      document.location.href = "usarios.html";
+    }, 3000);
   }
 }
 
@@ -105,13 +111,14 @@ function onClickSubmit(e) {
 submitButton.addEventListener("click", onClickSubmit);
 
 goToAllRegisteredBtn.addEventListener("click", function () {
-  window.location.href = "usarios.html";
+  document.location.href = "usarios.html";
 });
 
-goToRegisterPageBtn.addEventListener("click", function () {
-  window.location.href = "index.html";
+goToRegisterPageBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  document.location.href = "index.html";
 });
-
+console.log(window);
 // email form test --- test@test.com
 
 // password for test --- Test123
